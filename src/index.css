@@ -1,8 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 body {
+  font-family: 'Titillium Web', sans-serif;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +16,41 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.hero {
+  background-image: url('../src/images/EastWest Beaufort building facade.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(0deg, #35008f 0%, #542685 100%);
+  backdrop-filter: blur(8px);
+  opacity: 0.7; /* Adjust as necessary for desired effect */
+}
+
+.hero-contents {
+  position: relative;
+  z-index: 1; /* Ensures contents are on top of the background */
+}
+
+/* Additional styling to ensure the content is not blurred */
+.hero-contents * {
+  backdrop-filter: none; /* Ensures no blur effect on contents */
+}
+
+.ew-yellow {
+  color: #D5E14D
+}
+
+.hero-contents-2 {
+  backdrop-filter:blur(8px) !important;
 }
